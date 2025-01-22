@@ -1,0 +1,497 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+html {
+    scroll-behavior: smooth;
+}
+
+h1,
+h2,
+h5 {
+    font-weight: bold;
+    color: #fff;
+    /* White text to contrast the background image */
+}
+
+/* Full-page Background Image for Home Section */
+/* #home {
+    background: url('bg.jpg') no-repeat center center/cover;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+} */
+
+/* Services Section */
+#services {
+    background-color: #f8f9fa;
+    padding: 60px 0;
+}
+
+#services h2 {
+    color: #000;
+}
+
+.card {
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+.card h5 {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+.card i {
+    transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.card:hover i {
+    transform: scale(1.2);
+    color: #333; /* Darker shade on hover */
+}
+
+
+#services {
+    background-color: #f8f9fa;
+    /* Light gray background */
+}
+
+#services h2 {
+    color: #000;
+    /* Black heading */
+}
+
+#services .card h5 {
+    color: #000;
+    /* Black card titles */
+}
+
+#services .card p {
+    color: #333;
+    /* Dark gray for descriptions */
+}
+
+#services .card i {
+    color: #000;
+    /* Black icons */
+    transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+#services .card:hover i {
+    transform: scale(1.2);
+    /* Enlarge icons on hover */
+    color: #555;
+    /* Slightly lighter black on hover */
+}
+/* General reset for animation */
+.flower-container {
+    display: inline-block;
+    overflow: hidden;
+    position: relative;
+}
+
+.flower-animation {
+    width: 60%; 
+    height: auto;
+    transform: scale(0); /* Start with the image hidden (scale 0) */
+    opacity: 0; /* Initially invisible */
+    transition: transform 2s ease-in-out, opacity 2s ease-in-out; /* Smooth growth and fade-in effect */
+}
+
+/* When the image reaches the viewport */
+.flower-container.visible .flower-animation {
+    transform: scale(1); /* Grow to full size */
+    opacity: 1; /* Make the image visible */
+}
+
+/* Modal styles */
+.image-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Dark semi-transparent background */
+    display: none; /* Hidden by default */
+    align-items: center;
+    justify-content: center;
+    z-index: 1050; /* Ensure it appears above everything */
+}
+
+.image-modal img {
+    max-width: 90%;
+    max-height: 90%;
+    border: 5px solid white; /* White border around the image */
+    border-radius: 10px;
+}
+
+.image-modal:target {
+    display: flex; /* Show modal when targeted */
+}
+
+
+/* Portfolio Section */
+/* Portfolio Section */
+#portfolio {
+    background-color: #000; /* Black background */
+    padding: 60px 0;
+    color: #fff; /* White text */
+  }
+  
+  .belt-container {
+    overflow: hidden; /* Hide overflow for smooth animation */
+    position: relative;
+    width: 100%;
+  }
+  
+  .belt {
+    display: flex;
+    animation: scroll 20s linear infinite;
+  }
+  
+  .belt-item {
+    flex: 0 0 auto; /* Prevent shrinking or growing */
+    margin: 0 2px; /* Add spacing between items */
+  }
+  
+  .belt-item img {
+    max-width: 80%; /* Preserve original image size */
+    height: auto;
+    border-radius: 10px; /* Optional: rounded corners */
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .belt-item img:hover {
+    transform: scale(1.1); /* Slightly enlarge on hover */
+  }
+  
+  /* Keyframes for smooth infinite scrolling */
+  @keyframes scroll {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-200%);
+    }
+  }
+  
+#portfolio {
+    background: url('../assets/images/bg.jpg') no-repeat center center/cover;
+    color: #fff;
+    padding: 60px 0;
+}
+
+#portfolio img {
+    width: 100%;
+    /* Ensure images take up the full column width */
+    height: 250px;
+    /* Fixed height for consistency */
+    object-fit: cover;
+    /* Maintain aspect ratio and crop overflow */
+    border-radius: 10px;
+    /* Rounded corners */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+#portfolio img:hover {
+    transform: scale(1.05);
+    /* Slightly enlarge the image on hover */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+    /* Add a subtle shadow */
+}
+
+
+/* Team Section */
+#team {
+    background-color: black;
+    padding: 60px 0;
+}
+
+#team img {
+    border: 4px solid black;
+    transition: transform 0.3s ease-in-out;
+}
+
+#team img:hover {
+    transform: scale(1.1);
+}
+
+/* Set color of h2 and h5 to black */
+#team h2,
+#team h5 {
+    color: black;
+}
+
+
+/* Contact Section */
+#contact {
+    background: url('../assets/images/bg.jpg') no-repeat center center/cover;
+    color: #fff;
+    padding: 60px 0;
+}
+
+/* Navbar */
+/* Custom Navbar Styles */
+/* Navbar Styling */
+.custom-navbar {
+    background-color: #000; /* Black background */
+    transition: background-color 0.3s ease-in-out;
+    padding: 10px 0;
+}
+
+.custom-navbar a {
+    color: #fff; /* White text for links */
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.custom-navbar a:hover {
+    color: #f0ad4e; /* Gold hover effect */
+}
+
+.custom-navbar.scrolled {
+    background-color: rgba(0, 0, 0, 0.9); /* Slight transparency on scroll */
+}
+
+/* Background Image for Home Section */
+#home {
+    background: linear-gradient(
+            to right,
+            rgba(0, 0, 0, 0.8),
+            rgba(0, 0, 0, 0.8)
+        ),
+        url('../assets/images/bg.jpg'); /* Replace with your image path */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh; /* Full screen height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#home h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+#home p {
+    font-size: 1.5rem;
+    color: #ddd;
+}
+
+/* Smooth Scrolling for Links */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Custom styles for testimonials section */
+#testimonials {
+    background-color: white;
+    /* Set background to black */
+    color: #fff;
+    /* Set text color to white */
+}
+
+#testimonials h2 {
+    color: #fff;
+    /* Ensure the heading text is white */
+}
+
+#testimonials .carousel-item h5,
+#testimonials .carousel-item p {
+    color: black;
+    /* Set text inside carousel items to white */
+}
+
+#testimonials .carousel-item .text-muted {
+    color: black;
+    /* Set text-muted to a lighter shade of white */
+}
+
+.fst-italic {
+    color: black;
+    /* Optional: make italic text slightly lighter */
+}
+
+/* Simplified carousel controls */
+.carousel-control-prev,
+.carousel-control-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    /* No background color */
+    border: none;
+    /* Remove border */
+    color: #000;
+    /* Default arrow color */
+    font-size: 2rem;
+    /* Adjust icon size */
+    width: 40px;
+    /* Set fixed width for the buttons */
+    height: 40px;
+    /* Set fixed height for the buttons */
+    opacity: 1;
+    /* No transparency */
+}
+
+/* Remove hover effects */
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+    background: transparent;
+    /* No background change on hover */
+    opacity: 1;
+    /* Keep opacity constant */
+}
+
+/* Optional: Adjust the size of the arrow icons */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: #000;
+    /* Set color of the arrow icon */
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    /* Make icons circular */
+}
+
+
+#contact {
+    background-color: #f9f9f9;
+    /* Light gray background */
+    padding: 60px 0;
+    /* Vertical padding */
+}
+
+#contact h2 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+#contact .form-control {
+    border: 1px solid #ccc;
+    /* Light gray border */
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 5px;
+    /* Rounded edges */
+}
+
+#contact button {
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 10px;
+    background-color: #343a40;
+    /* Dark background for the button */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+}
+
+#contact button:hover {
+    background-color: #1abc9c;
+    /* Teal on hover */
+}
+
+#contact .fw-bold {
+    color: #333;
+    /* Darker text for headings */
+}
+
+#contact a {
+    color: #333;
+    /* Default link color */
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+
+#contact a:hover {
+    color: #1abc9c;
+    /* Teal color on hover */
+}
+footer {
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+footer a {
+    transition: color 0.3s ease-in-out;
+}
+
+footer a:hover {
+    color: #17a2b8; /* Light blue hover effect */
+}
+footer .bi {
+    transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+footer .bi:hover {
+    color: #17a2b8; /* Light blue hover effect */
+    transform: scale(1.2); /* Slightly enlarge on hover */
+}
+
+footer {
+    background-color: #2c3e50;
+    /* Dark background */
+    color: #ecf0f1;
+    /* Light text color */
+    padding: 40px 0;
+    /* Top and bottom padding */
+}
+
+footer h5 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #ecf0f1;
+    /* White text for headings */
+    margin-bottom: 20px;
+}
+
+footer p {
+    margin-bottom: 10px;
+    line-height: 1.6;
+    color: #bdc3c7;
+    /* Lighter gray text */
+}
+
+footer a {
+    color: #ecf0f1;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #1abc9c;
+    /* Change to teal on hover */
+}
+
+/* Sticky Effect */
+body {
+    padding-top: 0px;
+    /* Adjust for fixed navbar */
+}
+
+
+/* Button Styles */
+button {
+    transition: background-color 0.3s ease-in-out;
+}
+
+button:hover {
+    background-color: #555;
+}
