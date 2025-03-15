@@ -82,7 +82,7 @@ const Login = () => {
 
     try {
       const response = await axios.post(
-        `${process.env.REACT_APP_API_URL}/api/crosscode/login`,
+        `${process.env.REACT_APP_API_URL}/login`,
         { email, password }
       );
       const { token } = response.data;

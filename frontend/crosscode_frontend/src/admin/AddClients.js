@@ -26,7 +26,7 @@ const AddClient = () => {
         formData.append("logo", logo);
 
         try {
-            const response = await fetch(`${process.env.REACT_APP_API_URL}/api/crosscode/portfolio`, {
+            const response = await fetch(`${process.env.REACT_APP_API_URL}/portfolio`, {
                 method: "POST",
                 body: formData,
             });
