@@ -12,12 +12,15 @@ const app = express();
 // CORS Configuration
 const allowedOrigins = ['http://localhost:3000']; // Allow frontend requests
 
+
+
 app.use(cors({
-  origin: allowedOrigins,
+  origin: ["https://deploy-mern1whq.vercel.app"],
   methods: ['GET', 'POST', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization'],
   credentials: true,
 }));
+app.use(express.json())
 
 // Connect to MongoDB
 connectDB();
