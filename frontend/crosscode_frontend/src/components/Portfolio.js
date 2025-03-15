@@ -4,7 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 
 export default function Portfolio() {
   const [data, setData] = useState([]);
-  const navigate = useNavigate
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchClients = async () => {
