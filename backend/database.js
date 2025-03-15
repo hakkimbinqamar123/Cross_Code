@@ -1,17 +1,24 @@
 const mongoose = require('mongoose');
-require('dotenv').config(); // Load environment variables
 
 const connectDB = async () => {
   try {
-    // Use the environment variable for MongoDB connection
-    await mongoose.connect(process.env.MONGO_CONNECTION, {
+    console.log("🛠 Checking environment variables...");
+    console.log("MONGO_URI:", process.env.MONGO_URI ? "✔ Available" : "❌ Not Found");
+
+    if (!process.env.MONGO_URI) {
+      console.error("❌ MONGO_URI is undefined! Check Vercel env variables.");
+      process.exit(1);
+    }
+
+    await mongoose.connect(process.env.MONGO_URI, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     });
-    console.log('Connected to MongoDB Database');
-  } catch (err) {
-    console.error('MongoDB connection error:', err);
-    process.exit(1); // Exit process with failure
+
+    console.log('✅ MongoDB Connected Successfully');
+  } catch (error) {
+    console.error('❌ MongoDB Connection Error:', error.message);
+    process.exit(1);
   }
 };
 
