@@ -30,7 +30,7 @@ const Dashboard = () => {
 
     // Fetch Clients from API
     useEffect(() => {
-        fetch(`${process.env.REACT_APP_API_URL}/portfolio`)
+        fetch(`${process.env.REACT_APP_API_URL}/api/crosscode/portfolio`)
             .then((response) => {
                 if (!response.ok) {
                     throw new Error("Failed to fetch clients");
@@ -43,7 +43,7 @@ const Dashboard = () => {
 
     // Fetch Testimonials from API
     useEffect(() => {
-        fetch(`${process.env.REACT_APP_API_URL}/comments`)
+        fetch(`${process.env.REACT_APP_API_URL}/api/crosscode/comments`)
             .then((response) => {
                 if (!response.ok) {
                     throw new Error("Failed to fetch testimonials");
