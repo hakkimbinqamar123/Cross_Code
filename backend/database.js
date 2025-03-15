@@ -3,14 +3,14 @@ const mongoose = require('mongoose');
 const connectDB = async () => {
   try {
     console.log("🛠 Checking environment variables...");
-    console.log("MONGO_URI:", process.env.MONGO_CONNECTION ? "✔ Available" : "❌ Not Found");
+    console.log("MONGO_URI:", process.env.MONGO_URI ? "✔ Available" : "❌ Not Found");
 
-    if (!process.env.MONGO_CONNECTION) {
+    if (!process.env.MONGO_URI) {
       console.error("❌ MONGO_URI is undefined! Check Vercel env variables.");
       process.exit(1);
     }
 
-    await mongoose.connect(process.env.MONGO_CONNECTION, {
+    await mongoose.connect(process.env.MONGO_URI, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     });
