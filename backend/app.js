@@ -10,23 +10,26 @@ const path = require('path');
 const app = express();
 
 // CORS Configuration
-const allowedOrigins = ['http://localhost:3000'];  // Allow requests from your frontend's port
+const allowedOrigins = ['http://localhost:3000']; // Allow frontend requests
 
 app.use(cors({
-  origin: allowedOrigins,         // Accept requests only from this origin
-  methods: ['GET', 'POST', 'DELETE', 'OPTIONS'],  // Allow the methods (including OPTIONS for preflight)
-  allowedHeaders: ['Content-Type', 'Authorization'], // Allow headers typically used in requests
-  credentials: true,  // If your app uses cookies or authentication headers
+  origin: allowedOrigins,
+  methods: ['GET', 'POST', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  credentials: true,
 }));
 
 // Connect to MongoDB
 connectDB();
 
 // Middlewares
-app.use(cors()); // Enable CORS
-app.use(express.json()); // Parses JSON request bodies
-app.use(express.urlencoded({ extended: true })); // Parses URL-encoded request bodies
+app.use(cors()); 
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 app.use('/images', express.static(path.join(__dirname, 'uploads/images')));
+
+// Serve static files from the "public" folder
+app.use(express.static(path.join(__dirname, 'public')));
 
 // Routes
 app.use('/api/crosscode', portfolioRoutes);
@@ -34,9 +37,9 @@ app.use('/api/crosscode', commentsRoutes);
 app.use('/api/crosscode', loginRoutes);
 app.use('/api/crosscode', dashboardRoutes);
 
-// Default Route
+// Default Route: Serve the welcome page
 app.get('/', (req, res) => {
-  res.send('Welcome to the Website Backend API!');
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
 // Start Server
