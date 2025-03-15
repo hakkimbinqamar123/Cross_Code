@@ -10,29 +10,24 @@ const path = require('path');
 const app = express();
 
 // CORS Configuration
-const allowedOrigins = ['http://localhost:3000']; // Allow frontend requests
-
-
+const allowedOrigins = ['http://localhost:3000', 'https://deploy-mern1whq.vercel.app'];
 
 app.use(cors({
-  origin: ["https://deploy-mern1whq.vercel.app"],
+  origin: allowedOrigins,
   methods: ['GET', 'POST', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization'],
   credentials: true,
 }));
-app.use(express.json())
 
-// Connect to MongoDB
-connectDB();
-
-// Middlewares
-app.use(cors()); 
-app.use(express.json());
+app.use(express.json()); // Remove duplicate app.use(cors())
 app.use(express.urlencoded({ extended: true }));
 app.use('/images', express.static(path.join(__dirname, 'uploads/images')));
 
 // Serve static files from the "public" folder
 app.use(express.static(path.join(__dirname, 'public')));
+
+// Connect to MongoDB
+connectDB();
 
 // Routes
 app.use('/api/crosscode', portfolioRoutes);
