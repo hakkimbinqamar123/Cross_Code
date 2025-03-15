@@ -9,7 +9,7 @@ export default function Portfolio() {
   useEffect(() => {
     const fetchClients = async () => {
       try {
-        const response = await fetch(`${process.env.REACT_APP_API_URL}/portfolio`);
+        const response = await fetch(`${process.env.REACT_APP_API_URL}/api/crosscode/portfolio`);
         if (response.ok) {
           const data = await response.json();
           console.log("data: ", data);

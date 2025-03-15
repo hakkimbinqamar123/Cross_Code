@@ -9,7 +9,7 @@ const TestimonialsTable = () => {
   const itemsPerPage = 5;
 
   useEffect(() => {
-    fetch(`${process.env.REACT_APP_API_URL}/comments`)
+    fetch(`${process.env.REACT_APP_API_URL}/api/crosscode/comments`)
       .then((response) => response.json())
       .then((data) => setTestimonials(data))
       .catch((error) => console.error("Error fetching testimonials:", error));
@@ -36,7 +36,7 @@ const TestimonialsTable = () => {
 
   const confirmDeleteComment = async () => {
     try {
-      const response = await fetch(`${process.env.REACT_APP_API_URL}/comments/${commentToDelete}`, {
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/crosscode/comments/${commentToDelete}`, {
         method: "DELETE",
       });
       const data = await response.json();

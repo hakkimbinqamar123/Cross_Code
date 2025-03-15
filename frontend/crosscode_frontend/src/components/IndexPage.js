@@ -28,7 +28,7 @@ const IndexPage = () => {
     useEffect(() => {
         const fetchComments = async () => {
             try {
-                const response = await fetch(`${process.env.REACT_APP_API_URL}/comments`);
+                const response = await fetch(`${process.env.REACT_APP_API_URL}/api/crosscode/comments`);
                 if (response.ok) {
                     const data = await response.json();
                     setComments(data);
@@ -56,7 +56,7 @@ const IndexPage = () => {
         }
 
         try {
-            const response = await fetch(`${process.env.REACT_APP_API_URL}/comments`, {
+            const response = await fetch(`${process.env.REACT_APP_API_URL}/api/crosscode/comments`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -72,7 +72,7 @@ const IndexPage = () => {
                 setError("");  // Reset any previous errors
 
                 // Fetch updated comments
-                const updatedComments = await fetch(`${process.env.REACT_APP_API_URL}/comments`);
+                const updatedComments = await fetch(`${process.env.REACT_APP_API_URL}/api/crosscode/comments`);
                 setComments(await updatedComments.json());
 
                 // Hide the testimonial modal
