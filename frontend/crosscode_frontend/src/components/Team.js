@@ -5,269 +5,77 @@ import amal from "../assets/images/teammember1.jpg";
 
 export default function Team() {
     return (
-        <section
-            id="team"
-            style={{
-                padding: "50px 0",
-                backgroundColor: "#f8f9fa",
-                textAlign: "center",
-            }}
-        >
-            <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
-                <h2 style={{ fontSize: "2rem", marginBottom: "30px" }}>
-                    Our Team
-                </h2>
-                <div
-                    style={{
-                        display: "flex",
-                        justifyContent: "space-between",
-                        flexWrap: "wrap",
-                    }}
-                >
-                    {/* Team Member 1 */}
-                    <div
-                        style={{
-                            backgroundColor: "#fff",
-                            borderRadius: "10px",
-                            boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
-                            padding: "20px",
-                            width: "30%",
-                            marginBottom: "20px",
-                            textAlign: "center",
-                        }}
-                    >
-                        <div
-                            style={{
-                                width: "200px",
-                                height: "200px",
-                                margin: "0 auto 15px",
-                                borderRadius: "0%",
-                                overflow: "hidden",
-                                border: "2px solid #ddd",
-                            }}
-                        >
-                            <img
-                                src={bibin}
-                                alt="Bibin"
-                                style={{
-                                    width: "100%",
-                                    height: "100%",
-                                    objectFit: "cover",
-                                }}
-                            />
+        <section id="team" className="team-section">
+            <div className="container">
+                <h2>Our Team</h2>
+                <div className="team-grid">
+                    {teamMembers.map((member, index) => (
+                        <div key={index} className="team-card">
+                            <div className="image-container">
+                                <img src={member.image} alt={member.name} />
+                            </div>
+                            <h5>{member.name}</h5>
+                            <p>{member.role}</p>
+                            <div className="social-links">
+                                <a href="#"><i className="fab fa-facebook"></i></a>
+                                <a href="#"><i className="fab fa-twitter"></i></a>
+                                <a href="#"><i className="fab fa-linkedin"></i></a>
+                            </div>
                         </div>
-                        <h5 style={{ fontSize: "1.25rem", margin: "10px 0" }}>
-                            Bibin
-                        </h5>
-                        <p style={{ color: "#666", marginBottom: "15px" }}>
-                            Marketing Head
-                        </p>
-                        <div>
-                            <a
-                                href="#"
-                                style={{
-                                    color: "#555",
-                                    fontSize: "1.2rem",
-                                    margin: "0 10px",
-                                    textDecoration: "none",
-                                }}
-                            >
-                                <i className="fab fa-facebook"></i>
-                            </a>
-                            <a
-                                href="#"
-                                style={{
-                                    color: "#555",
-                                    fontSize: "1.2rem",
-                                    margin: "0 10px",
-                                    textDecoration: "none",
-                                }}
-                            >
-                                <i className="fab fa-twitter"></i>
-                            </a>
-                            <a
-                                href="#"
-                                style={{
-                                    color: "#555",
-                                    fontSize: "1.2rem",
-                                    margin: "0 10px",
-                                    textDecoration: "none",
-                                }}
-                            >
-                                <i className="fab fa-linkedin"></i>
-                            </a>
-                        </div>
-                    </div>
-
-                    {/* Team Member 2 */}
-                    <div
-                        style={{
-                            backgroundColor: "#fff",
-                            borderRadius: "10px",
-                            boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
-                            padding: "20px",
-                            width: "30%",
-                            marginBottom: "20px",
-                            textAlign: "center",
-                        }}
-                    >
-                        <div
-                            style={{
-                                width: "200px",
-                                height: "200px",
-                                margin: "0 auto 15px",
-                                borderRadius: "0%",
-                                overflow: "hidden",
-                                border: "2px solid #ddd",
-                            }}
-                        >
-                            <img
-                                src={amal}
-                                alt="Amal"
-                                style={{
-                                    width: "100%",
-                                    height: "100%",
-                                    objectFit: "cover",
-                                }}
-                            />
-                        </div>
-                        <h5 style={{ fontSize: "1.25rem", margin: "10px 0" }}>
-                            Amal
-                        </h5>
-                        <p style={{ color: "#666", marginBottom: "15px" }}>
-                            Lead Developer
-                        </p>
-                        <div>
-                            <a
-                                href="#"
-                                style={{
-                                    color: "#555",
-                                    fontSize: "1.2rem",
-                                    margin: "0 10px",
-                                    textDecoration: "none",
-                                }}
-                            >
-                                <i className="fab fa-facebook"></i>
-                            </a>
-                            <a
-                                href="#"
-                                style={{
-                                    color: "#555",
-                                    fontSize: "1.2rem",
-                                    margin: "0 10px",
-                                    textDecoration: "none",
-                                }}
-                            >
-                                <i className="fab fa-twitter"></i>
-                            </a>
-                            <a
-                                href="#"
-                                style={{
-                                    color: "#555",
-                                    fontSize: "1.2rem",
-                                    margin: "0 10px",
-                                    textDecoration: "none",
-                                }}
-                            >
-                                <i className="fab fa-linkedin"></i>
-                            </a>
-                        </div>
-                    </div>
-
-                    {/* Team Member 3 */}
-                    <div
-                        style={{
-                            backgroundColor: "#fff",
-                            borderRadius: "10px",
-                            boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
-                            padding: "20px",
-                            width: "30%",
-                            marginBottom: "20px",
-                            textAlign: "center",
-                        }}
-                    >
-                        <div
-                            style={{
-                                width: "200px",
-                                height: "200px",
-                                margin: "0 auto 15px",
-                                borderRadius: "0%",
-                                overflow: "hidden",
-                                border: "2px solid #ddd",
-                            }}
-                        >
-                            <img
-                                src={hakeem}
-                                alt="Hakeem"
-                                style={{
-                                    width: "100%",
-                                    height: "100%",
-                                    objectFit: "cover",
-                                }}
-                            />
-                        </div>
-                        <h5 style={{ fontSize: "1.25rem", margin: "10px 0" }}>
-                            Abdul Hakeem
-                        </h5>
-                        <p style={{ color: "#666", marginBottom: "15px" }}>
-                            Jr. Developer
-                        </p>
-                        <div>
-                            <a
-                                href="#"
-                                style={{
-                                    color: "#555",
-                                    fontSize: "1.2rem",
-                                    margin: "0 10px",
-                                    textDecoration: "none",
-                                }}
-                            >
-                                <i className="fab fa-facebook"></i>
-                            </a>
-                            <a
-                                href="#"
-                                style={{
-                                    color: "#555",
-                                    fontSize: "1.2rem",
-                                    margin: "0 10px",
-                                    textDecoration: "none",
-                                }}
-                            >
-                                <i className="fab fa-twitter"></i>
-                            </a>
-                            <a
-                                href="#"
-                                style={{
-                                    color: "#555",
-                                    fontSize: "1.2rem",
-                                    margin: "0 10px",
-                                    textDecoration: "none",
-                                }}
-                            >
-                                <i className="fab fa-linkedin"></i>
-                            </a>
-                        </div>
-                    </div>
+                    ))}
                 </div>
             </div>
             <style jsx>{`
-                @media (max-width: 768px) {
-                    #team .team-member {
-                        width: 100% !important;
-                        margin-bottom: 30px;
-                    }
+                .team-section {
+                    padding: 50px 0;
+                    background-color: #f8f9fa;
+                    text-align: center;
                 }
-
-                @media (max-width: 576px) {
-                    #team h2 {
-                        font-size: 1.5rem;
-                    }
-
-                    #team .team-member {
-                        width: 100% !important;
-                    }
+                .container {
+                    max-width: 1200px;
+                    margin: 0 auto;
+                    padding: 0 20px;
+                }
+                .team-grid {
+                    display: grid;
+                    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                    gap: 20px;
+                    justify-content: center;
+                }
+                .team-card {
+                    background-color: #fff;
+                    border-radius: 10px;
+                    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                    padding: 20px;
+                    text-align: center;
+                }
+                .image-container {
+                    width: 100%;
+                    max-width: 200px;
+                    height: 200px;
+                    margin: 0 auto 15px;
+                    overflow: hidden;
+                    border-radius: 50%;
+                    border: 2px solid #ddd;
+                }
+                .image-container img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+                .social-links a {
+                    color: #555;
+                    font-size: 1.2rem;
+                    margin: 0 10px;
+                    text-decoration: none;
                 }
             `}</style>
         </section>
     );
 }
+
+const teamMembers = [
+    { name: "Bibin", role: "Marketing Head", image: bibin },
+    { name: "Amal", role: "Lead Developer", image: amal },
+    { name: "Abdul Hakeem", role: "Jr. Developer", image: hakeem },
+];
