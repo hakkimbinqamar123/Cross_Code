@@ -10,7 +10,7 @@ const path = require('path');
 const app = express();
 
 // CORS Configuration
-const allowedOrigins = ['http://localhost:3000', 'https://cross-code-frontend.vercel.app'];
+const allowedOrigins = ['http://localhost:3000', 'https://cross-code-mbhe.vercel.app'];
 
 app.use(cors({
   origin: allowedOrigins,
